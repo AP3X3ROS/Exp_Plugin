@@ -1,0 +1,31 @@
+name: NetherExp
+description: 升级系统+实时显示[定制插件]
+author: MagicDroidX (c) 2011-2015
+api: 1.12.0
+version: 2.0.5
+main: MagicDroidX\Exp
+commands:
+  glory:
+    description: 兑换光荣
+    usage: /glory <编号> <数量>
+  setgrade:
+    description: 设置玩家等级
+    usage: /setgrade <ID> <等级>
+  giveglory:
+    desciption: 给予玩家光荣
+    usage: /giveglory <ID> <数量>
+  health:
+    description: 设置玩家最大血量
+    usage: /health <ID> <血量>
+  money:
+    description: 每日签到
+    usage: /money
+  skills:
+    description: 技能学习
+    usage: /skills <编号> <数量>
+  setskills:
+    description: 设置玩家技能点
+    usage: /setskills <ID> <点数>
+  qdskills:
+    description: 每日领取技能点VIP+专属
+    usage: /qdskills
