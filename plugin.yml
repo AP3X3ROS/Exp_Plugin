@@ -1,31 +1,31 @@
 name: Exp
 description: Exp plugin
 author: MagicDroidX (c) 2011-2015
-api: 1.0.0
-version: 1.0.0e1
+api: 1.12.0
+version: 2.0.5
 main: MagicDroidX\Exp
 commands:
   glory:
-    description: get item by using glory
-    usage: /glory <ID> <number>
+    description: Purchase Items with glory
+    usage: /glory <player> <amount>
   setgrade:
-    description: Set grade for a player
-    usage: /setgrade <player> <level>
+    description: Set the player level
+    usage: /setgrade <player> <lvl>
   giveglory:
-    desciption: give glory to a player
-    usage: /giveglory <player> <number>
+    desciption: Give players glory 
+    usage: /giveglory <player> <amount>
   health:
-    description: Set Max health for a player
-    usage: /health <player> <number>
+    description: set a players max health
+    usage: /health <player> <amount>
   money:
-    description: Sign Daily
+    description: Daily reward money
     usage: /money
   skills:
-    description: study skills
-    usage: /skills <ID> <number>
+    description: Learn Skills
+    usage: /skills <ID> <amount>
   setskills:
-    description: set skills for a player
-    usage: /setskills <player> <number>
+    description: Set skills for player
+    usage: /setskills <player> <amount>
   qdskills:
     description: Sign up for skills [SVIP]
     usage: /qdskills
