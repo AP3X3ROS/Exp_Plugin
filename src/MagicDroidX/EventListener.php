@@ -11,7 +11,7 @@ namespace MagicDroidX;
 use pocketmine\event\block\BlockBreakEvent;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
 use pocketmine\event\entity\EntityDamageEvent;
-use pocketmine\event\Listener;
+ use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerChatEvent;
 use pocketmine\event\player\PlayerDeathEvent;
 use pocketmine\event\player\PlayerJoinEvent;
@@ -32,8 +32,8 @@ class EventListener implements Listener {
     public function __construct(Exp $plugin) {
         $this->plugin = $plugin;
         $this->config = new Config($this->plugin->getDataFolder() . "//exp.yml", Config::YAML, array(
-            "原木" => 1,
-            "树叶" => 0,
+            "原木" => 1, 
+            "树叶" => 0, 
             "石头" => 1,
             "煤矿" => 2,
             "铁矿" => 3,
@@ -54,7 +54,7 @@ class EventListener implements Listener {
     public function onPlayerJoin(PlayerJoinEvent $event) {
         $event->setJoinMessage(null);
         $cc = $this->plugin->getPlayerConfigCache($event->getPlayer()->getName());
-        $this->plugin->getServer()->broadcastMessage(TextFormat::YELLOW . "传说中的 " . $this->plugin->getKnightString($cc->level) . TextFormat::YELLOW . " " . $event->getPlayer()->getName() . " 加入了游戏");
+        $this->plugin->getServer()->broadcastMessage(TextFormat::YELLOW . "Player " . $this->plugin->getKnightString($cc->level) . TextFormat::YELLOW . " " . $event->getPlayer()->getName() . " Join the Game");
         $event->getPlayer()->setNameTag(TextFormat::GREEN . "LV." . $cc->level .
             "  " . $this->plugin->getKnightString($cc->level) . "  " . TextFormat::WHITE . $event->getPlayer()->getName());
         $player = $event->getPlayer();
