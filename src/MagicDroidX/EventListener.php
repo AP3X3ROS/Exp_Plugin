@@ -42,8 +42,7 @@ class EventListener implements Listener {
             "Sand" => 1,
             "dirt" => 1,
             "garvel" => 1,
-            "Redstone" => 1
-        ));
+            "Redstone" => 1        ));
     }
 
     public function onPlayerLogin(PlayerLoginEvent $event) {
@@ -70,7 +69,7 @@ class EventListener implements Listener {
             $killer = $event->getDamager();
             $bkiller = $event->getEntity();
             if ($killer instanceof Player and $bkiller instanceof Player) {
-d                if ($bkiller->getHealth() - $event->getDamage() <= 0) {
+                if ($bkiller->getHealth() - $event->getDamage() <= 0) {
                     $this->plugin->addExp($killer->getName(), 50);
                     $kcc = $this->plugin->getPlayerConfigCache($killer->getName());
                     $bkcc = $this->plugin->getPlayerConfigCache($bkiller->getName());
@@ -80,11 +79,11 @@ d                if ($bkiller->getHealth() - $event->getDamage() <= 0) {
                     }
                 }
             }
-o        }
+        }
     }
 
     /**
-W     * @param BlockBreakEvent $event
+     * @param BlockBreakEvent $event
      *
      * @priority LOWEST
      */
