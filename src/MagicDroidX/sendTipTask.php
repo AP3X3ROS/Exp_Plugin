@@ -30,13 +30,13 @@ class sendTipTask extends PluginTask {
 				$skills = $cc->skills;
                 $level = $cc->level;
                 $popup = TextFormat::GREEN . "LV." . $level;
-                $popup .= "   " . TextFormat::GOLD . "经验值 " . $cc->exp . "/" . $this->plugin->getNextLevelExp($level);
+                $popup .= "   " . TextFormat::GOLD . "Exp " . $cc->exp . "/" . $this->plugin->getNextLevelExp($level);
                 $popup .= "   " . $this->plugin->getKnightString($level);
-                $popup .= TextFormat::AQUA . "   光荣:" . $cc->glory . "\n";
-                $popup .= TextFormat::WHITE . "在线玩家:" . $online;
-                $popup .= TextFormat::LIGHT_PURPLE . "   金币: $" . $moneys["money"][strtolower($player->getName())];
-				$popup .= TextFormat::LIGHT_PURPLE . "  技能点: *" . $skills;
-                $quanxian = "玩家";
+                $popup .= TextFormat::AQUA . "   Glory:" . $cc->glory . "\n";
+                $popup .= TextFormat::WHITE . "Player:" . $online;
+                $popup .= TextFormat::LIGHT_PURPLE . "   Coins: $" . $moneys["money"][strtolower($player->getName())];
+				$popup .= TextFormat::LIGHT_PURPLE . "  skills: *" . $skills;
+                $quanxian = "Player";
                 if ($player->isOp()) {
                     $quanxian = "OP";
                 } else {
@@ -47,7 +47,7 @@ class sendTipTask extends PluginTask {
                         $quanxian = "SVIP";
                     }
                 }
-                $popup .= TextFormat::GOLD . "   职位:" . $quanxian;
+                $popup .= TextFormat::GOLD . "   Permisson:" . $quanxian;
                 $player->sendPopup($popup);
             }
         }
