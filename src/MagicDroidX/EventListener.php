@@ -32,17 +32,17 @@ class EventListener implements Listener {
     public function __construct(Exp $plugin) {
         $this->plugin = $plugin;
         $this->config = new Config($this->plugin->getDataFolder() . "//exp.yml", Config::YAML, array(
-            "原木" => 1, 
-            "树叶" => 0, 
-            "石头" => 1,
-            "煤矿" => 2,
-            "铁矿" => 3,
-            "金矿" => 5,
-            "钻石矿" => 10,
-            "沙子" => 1,
-            "泥土" => 1,
-            "砂砾" => 1,
-            "红石" => 1
+            "Wood" => 1, 
+            "Leaf" => 0, 
+            "Stone" => 1,
+            "Coal" => 2,
+            "Iron" => 3,
+            "Gold" => 5,
+            "Diamond" => 10,
+            "Sand" => 1,
+            "dirt" => 1,
+            "garvel" => 1,
+            "Redstone" => 1
         ));
     }
 
@@ -56,8 +56,7 @@ class EventListener implements Listener {
         $cc = $this->plugin->getPlayerConfigCache($event->getPlayer()->getName());
         $this->plugin->getServer()->broadcastMessage(TextFormat::YELLOW . "Player " . $this->plugin->getKnightString($cc->level) . TextFormat::YELLOW . " " . $event->getPlayer()->getName() . " Join the Game");
         $event->getPlayer()->setNameTag(TextFormat::GREEN . "LV." . $cc->level .
-            "  " . $this->plugin->getKnightString($cc->level) . "  " . TextFormat::WHITE . $event->getPlayer()->getName());
-        $player = $event->getPlayer();
+            "  " . $this->plugin->getKnightString($cc->level) . "  " . TextFormat::WHITE . $event->getPlayer()->getName());        $player = $event->getPlayer();
         $cc = $this->plugin->getPlayerConfigCache($player->getName());
         $player->setMaxHealth($cc->max_health);
         $player->setHealth($cc->max_health);
@@ -71,21 +70,21 @@ class EventListener implements Listener {
             $killer = $event->getDamager();
             $bkiller = $event->getEntity();
             if ($killer instanceof Player and $bkiller instanceof Player) {
-                if ($bkiller->getHealth() - $event->getDamage() <= 0) {
+d                if ($bkiller->getHealth() - $event->getDamage() <= 0) {
                     $this->plugin->addExp($killer->getName(), 50);
                     $kcc = $this->plugin->getPlayerConfigCache($killer->getName());
                     $bkcc = $this->plugin->getPlayerConfigCache($bkiller->getName());
                     if ($kcc->level < $bkcc->level) {
-                        $this->plugin->getServer()->broadcastMessage(TextFormat::YELLOW . "逆天了！" . TextFormat::GREEN . "LV." . $kcc->level . " " . $killer->getName() . " 越阶杀死玩家 LV." . $bkcc->level . " " . $bkiller->getName() . " 额外获得50经验");
+                        $this->plugin->getServer()->broadcastMessage(TextFormat::YELLOW . "Oh my god！" . TextFormat::GREEN . "LV." . $kcc->level . " " . $killer->getName() . " kill LV." . $bkcc->level . " " . $bkiller->getName() . " ,get an extra 50 Exp");
                         $this->plugin->addExp($killer->getName(), 50);
                     }
                 }
             }
-        }
+o        }
     }
 
     /**
-     * @param BlockBreakEvent $event
+W     * @param BlockBreakEvent $event
      *
      * @priority LOWEST
      */
@@ -101,7 +100,7 @@ class EventListener implements Listener {
         switch ($item->getId()) {
             case ItemBlock::LOG:
 			    if (main::getInstance()->isVip($player->getName())){
-                $this->plugin->addExp($player->getName(), $this->config->get("原木"));
+                $this->plugin->addExp($player->getName(), $this->config->get("Wood"));
 				$player->sendMessage(TextFormat::RED ."尊敬VIP，您获得了VIP专属经验");
 				}
 				if (main::getInstance()->isSvip($player->getName())){
