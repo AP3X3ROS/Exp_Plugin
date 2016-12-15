@@ -75,8 +75,7 @@ class EventListener implements Listener {
                     $bkcc = $this->plugin->getPlayerConfigCache($bkiller->getName());
                     if ($kcc->level < $bkcc->level) {
                         $this->plugin->getServer()->broadcastMessage(TextFormat::YELLOW . "Oh my god！" . TextFormat::GREEN . "LV." . $kcc->level . " " . $killer->getName() . " kill LV." . $bkcc->level . " " . $bkiller->getName() . " ,get an extra 50 Exp");
-                        $this->plugin->addExp($killer->getName(), 50);
-                    }
+                        $this->plugin->addExp($killer->getName(), 50);                    }
                 }
             }
         }
@@ -100,52 +99,52 @@ class EventListener implements Listener {
             case ItemBlock::LOG:
 			    if (main::getInstance()->isVip($player->getName())){
                 $this->plugin->addExp($player->getName(), $this->config->get("Wood"));
-				$player->sendMessage(TextFormat::RED ."尊敬VIP，您获得了VIP专属经验");
+				$player->sendMessage(TextFormat::RED ."Lovely VIP，you get an extra Exp");
 				}
 				if (main::getInstance()->isSvip($player->getName())){
-				$this->plugin->addExp($player->getName(), $this->config->get("原木"));
-				$money = $this->config->get("原木");
-				$player->sendMessage(TextFormat::RED ."尊敬的SVIP玩家，您获得了SVIP专属经验和SVIP专属金币 $money 个");
+				$this->plugin->addExp($player->getName(), $this->config->get("Wood"));
+				$money = $this->config->get("Wood");
+				$player->sendMessage(TextFormat::RED ."Lovely SVIP，you get an ectra Exp and $money coins");
 				EconomyAPI::getInstance()->addMoney($player, $money);
 				}
                 break;
             case ItemBlock::LEAVE:
 			    if (main::getInstance()->isVip($player->getName())){
-                $this->plugin->addExp($player->getName(), $this->config->get("树叶"));
-				$player->sendMessage(TextFormat::RED ."尊敬的VIP，您获得了VIP专属经验");
+                $this->plugin->addExp($player->getName(), $this->config->get("Leaf"));
+				$player->sendMessage(TextFormat::RED ."Lovely VIP，you get an ectra Exp");
 				}
 				if (main::getInstance()->isSvip($player->getName())){
-				$this->plugin->addExp($player->getName(), $this->config->get("树叶"));
-				$money = $this->config->get("树叶");
-				$player->sendMessage(TextFormat::RED ."尊敬的SVIP，您获得了SVIP专属经验和SVIP专属金币 $money 个");
+				$this->plugin->addExp($player->getName(), $this->config->get("Leaf"));
+				$money = $this->config->get("Leaf");
+				$player->sendMessage(TextFormat::RED ."Lovely SVIP，you get an extra Exp and $money coins");
 				EconomyAPI::getInstance()->addMoney($player, $money);
 				}
                 break;
             case ItemBlock::STONE:
                 if (main::getInstance()->isVip($player->getName())){
-                $this->plugin->addExp($player->getName(), $this->config->get("石头"));
-				$player->sendMessage(TextFormat::RED ."尊敬的VIP，您获得了VIP专属经验");
+                $this->plugin->addExp($player->getName(), $this->config->get("stone"));
+				$player->sendMessage(TextFormat::RED ."Lovely VIP, you get an extra Exp");
 				}
 				if (main::getInstance()->isSvip($player->getName())){
-				$this->plugin->addExp($player->getName(), $this->config->get("石头"));
-				$money = $this->config->get("石头");
-				$player->sendMessage(TextFormat::RED ."尊敬的SVIP，您获得了SVIP专属经验和SVIP专属金币 $money 个");
+				$this->plugin->addExp($player->getName(), $this->config->get("stone"));
+				$money = $this->config->get("stone");
+				$player->sendMessage(TextFormat::RED ."Lovely SVIP，you get an extra Exp and $money coins");
 				EconomyAPI::getInstance()->addMoney($player, $money);
 				}
                 break;
             case ItemBlock::COAL_ORE:
-                $this->plugin->addExp($player->getName(), $this->config->get("煤矿"));
+                $this->plugin->addExp($player->getName(), $this->config->get("Coal"));
 				if (main::getInstance()->isVip($player->getName())){
-				$this->plugin->addExp($player->getName(), $this->config->get("煤矿"));
-				$money = $this->config->get("煤矿");
-				$player->sendMessage(TextFormat::RED ."尊敬的VIP，您获得了VIP专属金币 $money 个");
+				$this->plugin->addExp($player->getName(), $this->config->get("Coal"));
+				$money = $this->config->get("Coal");
+				$player->sendMessage(TextFormat::RED ."Lovely VIP，You got $money coins");
 				EconomyAPI::getInstance()->addMoney($player, $money);
 				}
 				if (main::getInstance()->isSvip($player->getName())){
-				$EXP = $this->config->get("煤矿");
+				$EXP = $this->config->get("Coal");
 				$EXP = $EXP * 2;
 				$this->plugin->addExp($player->getName(), $EXP);
-				$money = $this->config->get("煤矿");
+				$money = $this->config->get("Coal");
 				$player->sendMessage(TextFormat::RED ."尊敬的SVIP，您获得了SVIP专属" . TextFormat::YELLOW . "双倍经验" . TextFormat::RED . "和SVIP专属金币 $money 个");
 				EconomyAPI::getInstance()->addMoney($player, $money);
 				}
