@@ -1,6 +1,6 @@
 # Exp_Plugin
 This is a Exp plugins that use plugin provided system but not using the Minecraft Exp system.
-<pr>
+<pre>
 commands:
   glory:
     description: get item by using glory
@@ -26,4 +26,4 @@ commands:
   qdskills:
     description: Sign up for skills [SVIP]
     usage: /qdskills
-    </pr>
+    </pre>
